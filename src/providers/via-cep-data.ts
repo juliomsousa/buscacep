@@ -15,11 +15,11 @@ export class ViaCepData {
       console.log('Hello ViaCepData Provider');
   }
 
-  getCep() {
+  getCep(cep) {
       // console.log(this.http.get('https://viacep.com.br/ws/01001000/json/'));
       // this.http.get('https://viacep.com.br/ws/01001000/json/').subscribe(data => {console.log(data);});
       // this.http.get('https://viacep.com.br/ws/01001000/json/').map(res => res.json()).subscribe(data => {console.log(data);});
-      return this.http.get('https://viacep.com.br/ws/01001000/json/').map(res => res.json());
+      return this.http.get('https://viacep.com.br/ws/'+ cep +'/json/').map(res => res.json());
   }
 
   getCepLocal() {

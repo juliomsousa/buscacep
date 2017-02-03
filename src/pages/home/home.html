@@ -7,5 +7,23 @@
 </ion-header>
 
 <ion-content padding>
-    <h2>{{endereco?.bairro}}</h2>
+    <ion-list>
+        <ion-item>
+            <ion-label fixed>Username</ion-label>
+            <ion-input type="text" value=""></ion-input>
+        </ion-item>
+    </ion-list>
+    <button ion-button block>Block Button</button>
+    
+    <ion-list>
+        <ion-item>
+            <label>CEP: </label>{{endereco?.cep}}<br/>
+            <label>Logradouro: </label>{{endereco?.logradouro}}<br/>
+            <label>Complemento: </label>{{endereco?.complemento}}<br/>
+            <label>Bairro: </label>{{endereco?.bairro}}<br/>
+            <label>Localidade: </label>{{endereco?.localidade}}<br/>
+            <label>Estado: </label>{{endereco?.uf}}<br/>
+            
+        </ion-item>
+    </ion-list>
 </ion-content>

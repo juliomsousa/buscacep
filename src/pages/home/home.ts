@@ -11,6 +11,7 @@ import { ViaCepData } from '../../providers/via-cep-data';
 export class HomePage {
 
   public endereco: Endereco;
+  public cep = '05210070';
 
   constructor(public navCtrl: NavController, public viaCepService: ViaCepData) {
       //console.log(this.endereco);
@@ -22,9 +23,10 @@ export class HomePage {
   }
 
   ionViewDidLoad() {
-      this.viaCepService.getCep().subscribe(data => {
+      
+      this.viaCepService.getCep(this.cep).subscribe(data => {
           this.endereco = data;
-      })
+      });
   }
 
 }
