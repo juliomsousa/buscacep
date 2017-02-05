@@ -7,14 +7,15 @@
 </ion-header>
 
 <ion-content padding>
-    <ion-list>
-        <ion-item>
-            <ion-label fixed>Username</ion-label>
-            <ion-input type="text" value=""></ion-input>
-        </ion-item>
-    </ion-list>
-    <button ion-button block>Block Button</button>
-    
+    <form (submit)=buscaCep(cep.value)>
+        <ion-list>
+            <ion-item>
+                <ion-label fixed>Digite o CEP</ion-label>
+                <ion-input type="text" #cep></ion-input>
+            </ion-item>
+        </ion-list>
+        <button ion-button block>buscar</button>
+    </form>
     <ion-list>
         <ion-item>
             <label>CEP: </label>{{endereco?.cep}}<br/>
