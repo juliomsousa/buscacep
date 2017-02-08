@@ -26,4 +26,12 @@ export class ViaCepData {
       return this.http.get('../assets/data/cep.json').map(res => res.json());
   }
 
+  getEndereco(uf, cidade, rua) {
+      return this.http.get('https://viacep.com.br/ws/'+ uf + '/' + cidade + '/' + rua +'/json/').map(res => res.json());
+  }
+
+  getEnderecoLocal() {
+      return this.http.get('../assets/data/enderecos.json').map(res => res.json());
+  }
+
 }

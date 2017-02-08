@@ -1,0 +1,40 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Busca por Endereço</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content padding>
+    
+    <form (submit)="buscaEndereco(uf.value, cidade.value, endereco.value)">
+        <ion-list>
+            <ion-item>
+                <ion-label fixed>Estado</ion-label>
+                <ion-input #uf></ion-input>
+            </ion-item>
+            <ion-item>
+                <ion-label fixed>Cidade</ion-label>
+                <ion-input #cidade></ion-input>
+                </ion-item>
+            <ion-item>
+                <ion-label fixed>Endereço</ion-label>
+                <ion-input #endereco></ion-input>
+            </ion-item>
+        </ion-list>
+        <button ion-button block>buscar</button>
+    </form>
+    <ion-list>
+        <ion-item *ngFor="let endereco of enderecos">
+            <label>CEP: </label>{{endereco.cep}}<br/>
+            <label>Logradouro: </label>{{endereco.logradouro}}<br/>
+            <label>Complemento: </label>{{endereco.complemento}}<br/>
+            <label>Bairro: </label>{{endereco.bairro}}<br/>
+            <label>Localidade: </label>{{endereco.localidade}}<br/>
+            <label>Estado: </label>{{endereco.uf}}<br/>
+            
+        </ion-item>
+    </ion-list>
+
+</ion-content>
